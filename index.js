@@ -138,11 +138,18 @@ function processProduct(num1, num2, callback) {
  * should return "sad".
 */
 function processContains(item, list, callback) {
-  // const filterContain = list.filter(function(item){
-  // return callback (item === list);  
-  // });
-  // console.log(filterContain);
-}
+  let boolAns = false;
+  list.forEach(function(element){
+    if (item === element) {
+      boolAns = true;
+    } 
+
+    
+  });
+  return callback (boolAns);
+  //console.log(filterContain);
+} // end processContains
+
 
 /**
  * ### Challenge `processDuplicateFree`
@@ -294,8 +301,18 @@ function counterMaker() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
-  /* CODE HERE */
+function counterMakerWithLimit(limit) {
+
+  let count = -1;
+
+  return function () {
+    if (count < limit) {
+      return ++count;
+    } else if (count === limit) {
+     return count = 0;
+    } // end ifs
+    
+  }
 }
 
 /////////////// END OF CHALLENGE ///////////////
