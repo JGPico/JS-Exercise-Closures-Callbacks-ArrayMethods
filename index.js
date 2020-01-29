@@ -173,6 +173,11 @@ function processContains(item, list, callback) {
 */
 function processDuplicateFree(list, callback) {
   
+  const deDupedArray = list.filter(function(item, index) {
+  return list.indexOf(item) === index;
+  });  
+
+  return callback (deDupedArray);
 
 }
 
